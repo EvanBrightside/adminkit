@@ -1,0 +1,12 @@
+= f.label field.attribute
+.custom-file
+  = f.file_field :photo, id: 'author_photo', class: 'custom-file-input'
+  label.custom-file-label for="logo" = t('admin.helpers.choice_file')
+- if f.object.photo.attached?
+  .attached_photo.pt-1
+    = image_tag f.object.photo.variant(resize_to_limit: [200, 200])
+javascript:
+    $('.custom-file-input').on('change', function () {
+        let fileName = $(this).val().split('\\').pop();
+        $(this).next('.custom-file-label').addClass("selected").html(fileName);
+    });

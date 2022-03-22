@@ -1,0 +1,9 @@
+- if valid_action?(:show, collection_presenter.resource_name)
+  = link_to(external_link_to(resource), { class: 'btn btn-sm btn-success btn-space mr-1', rel: 'noopener noreferrer', target: '_blank' } ) do
+    i.fa.fa-eye
+- if valid_action?(:edit, collection_presenter.resource_name)
+  = link_to([:edit, namespace, resource], class: 'btn btn-sm btn-primary btn-space mr-1') do
+    i.fa.fa-edit
+- if valid_action?(:destroy, collection_presenter.resource_name)
+  = button_to([namespace, resource], class: 'btn btn-sm btn-danger', method: :delete, data: {confirm: t('administrate.actions.confirm') }) do
+    i.fa.fa-trash

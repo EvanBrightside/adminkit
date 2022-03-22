@@ -1,0 +1,15 @@
+- content_for(:title) do
+  = t("admin.menu.#{display_resource_name(page.resource_name).downcase}")
+.row.wrapper.border-bottom.white-bg.page-heading
+  .col-lg-4
+    h2
+      = content_for(:title)
+- if valid_action?(:new) && show_action?(:new, new_resource)
+  .wrapper.wrapper-content.animated.fadeInRight
+    .row.mt-2
+      .col-lg-8
+        = render 'index_actions', page: page
+      .col-lg-4
+.wrapper.wrapper-content.animated.fadeInRight
+  = render("collection", collection_presenter: page, collection_field_name: resource_name, page: page, resources: resources, table_title: "page-title")
+  = paginate resources

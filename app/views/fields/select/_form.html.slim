@@ -1,0 +1,5 @@
+= f.label field.attribute
+- if field.selectable_options.first&.is_a?(Array)
+    = f.select field.attribute, options_from_collection_for_select(field.selectable_options, :last, :first, field.data), { include_blank: true, include_hidden: false }, { required: true, class: 'form-control select2_input' }
+- else
+    = f.select field.attribute, options_from_collection_for_select(field.selectable_options, :to_s, :to_s, field.data), { include_blank: true, include_hidden: false }, { required: true, class: 'form-control select2_input' }

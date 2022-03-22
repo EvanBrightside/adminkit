@@ -1,0 +1,7 @@
+- content_for(:title) do
+  = I18n.t("admin.new.#{page.resource_name.downcase}").titleize
+
+.wrapper.wrapper-content.animated.fadeInRight
+  h1.main-content__page-title
+    = content_for(:title)
+  = render "form", page: page

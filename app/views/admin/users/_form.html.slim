@@ -1,0 +1,9 @@
+= form_for([namespace, page.resource], html: { class: "form" }) do |f|
+  = render 'admin/application/form_errors', page: page
+  .form-group.row
+    - page.attributes.each do |attribute|
+      .col-sm-6
+        = render_field attribute, f: f
+  .form-actions
+    = f.submit t('administrate.actions.save'), class: 'btn btn-primary btn-sm mr-1'
+    = link_to t("administrate.actions.back"), :back, class: 'btn btn-danger btn-sm'

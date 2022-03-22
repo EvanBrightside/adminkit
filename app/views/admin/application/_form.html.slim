@@ -1,0 +1,7 @@
+= form_for([namespace, page.resource], html: { class: "form" }) do |f|
+  = render 'form_errors', page: page
+  - page.attributes.each do |attribute|
+    = render_field attribute, f: f
+  .form-actions
+    = f.submit t('administrate.actions.add'), class: 'btn btn-primary btn-sm mr-1'
+    = link_to t("administrate.actions.back"), :back, class: 'btn btn-danger btn-sm'

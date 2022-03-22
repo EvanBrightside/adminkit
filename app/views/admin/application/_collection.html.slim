@@ -1,0 +1,26 @@
+.ibox-content
+  .table-responsive
+    .dataTables_wrapper.container-fluid.dt-bootstrap4
+      table.table.table-striped.table-hover.dataTables_main
+        thead
+          tr
+            - collection_presenter.attribute_types.each do |attr_name, attr_type|
+              th
+                = t("helpers.label.#{collection_presenter.resource_name}.#{attr_name}")
+            th
+              = t('administrate.actions.actions')
+        tbody
+          - resources.each do |resource|
+            tr
+              - collection_presenter.attributes_for(resource).each do |attribute|
+                td
+                  = render_field(attribute)
+              td
+                = render 'collection_actions', collection_presenter: collection_presenter, resource: resource
+        tfoot
+          tr
+            - collection_presenter.attribute_types.each do |attr_name, attr_type|
+              th
+                = t("helpers.label.#{collection_presenter.resource_name}.#{attr_name}")
+            th
+              = t('administrate.actions.actions')

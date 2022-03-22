@@ -1,0 +1,4 @@
+- if resource_name == :category
+  = "#{ ("\u2014".chr) * (field.resource.depth + 1) } #{field.data}"
+- else
+  = field.data

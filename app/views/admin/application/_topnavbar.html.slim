@@ -1,0 +1,11 @@
+.row.border-bottom
+  nav.navbar.navbar-static-top role="navigation" style=("margin-bottom: 0")
+    .navbar-header
+      a.navbar-minimalize.minimalize-styl-2.btn.btn-primary href="#" 
+        i.bi.bi-arrow-left-circle-fill
+      form.navbar-form-custom action="" method="post" role="search" 
+        .form-group
+    ul.nav.navbar-top-links.navbar-right
+      li
+        = button_to '', method: :delete, class: 'btn btn-sm btn-primary' do
+          i.bi.bi-box-arrow-right= t('administrate.actions.sign_out')

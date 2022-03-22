@@ -1,0 +1,4 @@
+- if field.resource.parent.present?
+  = link_to field.resource.parent.title, edit_admin_category_path(field.resource)
+- else
+  = content_tag(:span, ' - ')

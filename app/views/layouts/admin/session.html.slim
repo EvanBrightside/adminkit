@@ -1,0 +1,11 @@
+doctype html
+html lang="en"
+  head
+    meta content=("text/html; charset=UTF-8") http-equiv="Content-Type"
+    = javascript_pack_tag 'administrate'
+    = stylesheet_pack_tag 'administrate'
+
+    = csrf_meta_tags
+  body style="background-color: #f3f3f4 !important;"
+    .wrapper
+      = yield

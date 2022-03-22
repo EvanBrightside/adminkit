@@ -1,0 +1,2 @@
+= f.label :parent
+= f.select :parent_id, Category.all.collect {|c| [ c.title, c.id ] }, { include_blank: true, selected: f.object.parent_id }, class: 'form-control'

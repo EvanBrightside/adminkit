@@ -1,0 +1,4 @@
+= f.label field.type
+= f.select field.attribute, options_for_select(field.collection.map { |obj| [translate_collection(field, obj), obj] },
+           field.data ),
+           {include_hidden: false}, { multiple: field.multiple, class: 'form-control select2_input form-control collection-select-field' }
